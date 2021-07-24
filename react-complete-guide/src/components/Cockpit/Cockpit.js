@@ -36,7 +36,7 @@ const cockpit = (props) => {
 
   //putting the classes in array if conditions met
   if (props.persons.length <= 2) {
-    classes.push("red");
+    classes.unshift("red");
   }
 
   if (props.persons.length <= 1) {

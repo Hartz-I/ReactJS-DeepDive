@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Person from "../components/Persons/Person/Person"; //after reforming the parts
+//import Person from "../components/Persons/Person/Person"; //after reforming the parts
 
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";

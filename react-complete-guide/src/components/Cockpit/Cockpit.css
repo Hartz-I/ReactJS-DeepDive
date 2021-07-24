@@ -5,7 +5,7 @@
 .bold {
   font-weight: bold;
 
-  animation: shake 2s infinite ease;
+  animation: shake 2s infinite linear;
 }
 
 .para {
@@ -14,6 +14,7 @@
   box-shadow: 0 2px 3px rgb(180, 166, 166);
   margin: 16px auto;
   background-color: aliceblue;
+  color: rgb(62, 115, 161);
 }
 
 @keyframes shake {
