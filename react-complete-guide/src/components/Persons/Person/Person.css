@@ -9,13 +9,28 @@
   background-color: rgba(251, 255, 0, 0.342);
   color: rgb(0, 0, 0);
   font-size: 20px;
+  font-family: "Lucida Handwriting", "Lucida", "Cursive";
 
   animation: slideDown 0.5s ease;
 }
 
+.textInput {
+  width: 80%;
+  height: 50px;
+  font-size: 32px;
+  border: 2px solid brown;
+  border-radius: 5px;
+  font-family: "Lucida Handwriting", "Lucida", "Cursive";
+}
+
+.changedText {
+  font-size: 32px;
+  font-weight: 800;
+}
+
 @keyframes slideDown {
   0% {
-    transform: translateX(-500px);
+    transform: translateX(-800px);
   }
 
   100% {
