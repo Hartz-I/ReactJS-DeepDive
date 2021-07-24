@@ -1,17 +1,21 @@
 .Person {
   width: 60%;
   margin: 16px auto;
-  border: 1px solid #eee;
-  box-shadow: 1px 2px 2px rgb(172, 168, 168);
+  border: 1px solid rgb(228, 221, 221);
+  box-shadow: 1px 2px 5px rgb(179, 174, 174);
   padding: 16px;
   text-align: center;
 
-  animation: slideDown 2s ease;
+  background-color: rgba(251, 255, 0, 0.342);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+
+  animation: slideDown 0.5s ease;
 }
 
 @keyframes slideDown {
   0% {
-    transform: translateX(-50px);
+    transform: translateX(-500px);
   }
 
   100% {

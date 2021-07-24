@@ -1,0 +1,38 @@
+.red {
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+
+  animation: shake 2s infinite ease;
+}
+
+.para {
+  width: 200px;
+  padding: 10px;
+  box-shadow: 0 2px 3px rgb(180, 166, 166);
+  margin: 16px auto;
+  background-color: aliceblue;
+}
+
+@keyframes shake {
+  39% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  45% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  55% {
+    transform: rotate(-2deg);
+  }
+  56% {
+    transform: rotate(0deg);
+  }
+}

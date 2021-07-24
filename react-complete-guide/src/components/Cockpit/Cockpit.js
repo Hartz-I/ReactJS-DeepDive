@@ -2,6 +2,8 @@ import React from "react";
 
 import Radium from "radium";
 
+import "./Cockpit.css";
+
 const cockpit = (props) => {
   const style = {
     backgroundColor: "green",
@@ -30,7 +32,7 @@ const cockpit = (props) => {
   }
 
   //dynamically changing classes
-  const classes = [];
+  const classes = ["para"];
 
   //putting the classes in array if conditions met
   if (props.persons.length <= 2) {
