@@ -11,16 +11,17 @@ const style = {
 };
 
 const person = (props) => {
+  console.log("[Person.js] person rendering..");
   return (
     <div className="Person" style={style}>
       <p onClick={props.click}>
-        I'm <span class="changedText">{props.name}</span> and I am {props.age}{" "}
-        years old
+        I'm <span className="changedText">{props.name}</span> and I am{" "}
+        {props.age} years old
       </p>
       <p>{props.children}</p>
       <input
         type="text"
-        class="textInput"
+        className="textInput"
         onChange={props.changed}
         value={props.name}
       />

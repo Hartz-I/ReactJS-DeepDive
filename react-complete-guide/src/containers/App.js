@@ -10,7 +10,26 @@ import Radium, { StyleRoot } from "radium"; //need styleroot of media and keyfra
 //deep dive!!!
 //let us reArrage the parts
 
+//lifecyclehooks. run to see which comes after which
+
 class App extends Component {
+  //with lifecyclehooks
+  constructor(props) {
+    super(props); //used to setup correctly. must do if custom constructor
+
+    console.log("[App.js] constructor");
+
+    // this.state = {
+    //   //state can be done in constructor
+    //   persons: [
+    //     { id: "123", name: "Max", age: 28 },
+    //     { id: "456", name: "Manu", age: 29 },
+    //     { id: "789", name: "Stephnie", age: 26 },
+    //   ],
+    //   showPersons: false,
+    // };
+  }
+
   state = {
     persons: [
       { id: "123", name: "Max", age: 28 },
@@ -19,6 +38,22 @@ class App extends Component {
     ],
     showPersons: false,
   };
+
+  //lch
+  static getDerivedStateFromProps(props, state) {
+    console.log("[App.js] getDerivedStateFromProps", props);
+    return state;
+  }
+
+  //lch: not used
+  // componentWillMount() {
+  //   console.log("[App.js] componentWillMount");
+  // }
+
+  //lch: after render it will run
+  componentDidMount() {
+    console.log("[App.js] componentDidMount ");
+  }
 
   switchNameHandler = (newName) => {
     this.setState({
@@ -64,7 +99,9 @@ class App extends Component {
     });
   };
 
+  //lch
   render() {
+    console.log("[App.js] render");
     //adding style dynamically
 
     let persons = null;
