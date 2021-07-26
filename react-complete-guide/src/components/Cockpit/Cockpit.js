@@ -9,14 +9,14 @@ const cockpit = (props) => {
   //works every render
   //it's like component did update and component did mound compbined
 
-  useEffect(() => {
-    console.log("[Cockpit.js] useEffect");
-    //http requests..
+  // useEffect(() => {
+  //   console.log("[Cockpit.js] useEffect");
+  //   //http requests..
 
-    setTimeout(() => {
-      alert("Saved data from cloud");
-    }, 1000);
-  }, []); //if put props.persons in [] then it only occurs if persons change
+  //   setTimeout(() => {
+  //     alert("Saved data from cloud");
+  //   }, 1000);
+  // }, []); //if put props.persons in [] then it only occurs if persons change
   //if [] is empty then only runs when page loads
   //put dependency in []
 

@@ -16,12 +16,15 @@ const style = {
 //add everything within render() {} method
 //change all props to this.props
 //change the export name
+
+const styleClass = ["Person"];
+
 class Person extends Component {
   render() {
     console.log("[Person.js] person rendering..");
 
     return (
-      <div className="Person" style={style}>
+      <div className={styleClass.join(" ")} style={style}>
         <p onClick={this.props.click}>
           I'm <span className="changedText">{this.props.name}</span> and I am{" "}
           {this.props.age} years old
