@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react"; //use effect is like all lifecycle hooks mashed
 
 import Radium from "radium";
 
 import "./Cockpit.css";
 
 const cockpit = (props) => {
+  useEffect(() => {
+    //works every render
+    //it's like component did update and component did mound compbined
+    console.log("[Cockpit.js] useEffect");
+  });
+
   const style = {
     backgroundColor: "green",
     color: "white",

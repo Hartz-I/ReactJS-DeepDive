@@ -42,4 +42,16 @@
   56% {
     transform: rotate(0deg);
   }
+
+  /* 0% { //move left right
+    transform: translate(-40vw);
+  }
+
+  50% {
+    transform: translate(40vw);
+  }
+
+  100% {
+    transform: translate(-40vw);
+  } */
 }
