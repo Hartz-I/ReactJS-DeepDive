@@ -1,0 +1,48 @@
+.Person {
+  width: 60%;
+  margin: 16px auto;
+  border: 1px solid rgb(228, 221, 221);
+  box-shadow: 1px 2px 5px rgb(179, 174, 174);
+  padding: 16px;
+  text-align: center;
+
+  background-color: rgba(251, 255, 0, 0.342);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: "Lucida Handwriting", "Lucida", "Cursive";
+
+  animation: slideDown 0.2s ease;
+}
+
+.textInput {
+  width: 80%;
+  height: 50px;
+  font-size: 32px;
+  border: 2px solid brown;
+  border-radius: 5px;
+  font-family: "Lucida Handwriting", "Lucida", "Cursive";
+}
+
+.textInput:hover {
+  background-color: aliceblue;
+}
+
+.textInput:focus {
+  background-color: rgb(180, 135, 39);
+  color: rgb(255, 244, 219);
+}
+
+.changedText {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateX(-800px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
