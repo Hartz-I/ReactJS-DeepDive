@@ -43,6 +43,12 @@ class Persons extends Component {
     console.log(Snapshot);
   }
 
+  //cleanup work
+  componentWillUnmount() {
+    //any code right before removal of the component (toggling)
+    console.log("[Persons.js] componentWillUnmount");
+  }
+
   //3lch: update
   render() {
     console.log("[Persons.js] rendering..");

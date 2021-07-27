@@ -9,18 +9,34 @@ const cockpit = (props) => {
   //works every render
   //it's like component did update and component did mound compbined
 
-  // useEffect(() => {
-  //   console.log("[Cockpit.js] useEffect");
-  //   //http requests..
+  useEffect(() => {
+    console.log("[Cockpit.js] useEffect");
+    //http requests..
 
-  //   setTimeout(() => {
-  //     alert("Saved data from cloud");
-  //   }, 1000);
-  // }, []); //if put props.persons in [] then it only occurs if persons change
+    setTimeout(() => {
+      alert("Saved data from cloud");
+    }, 1000);
+
+    return () => {
+      //run everytime cockpit is removed
+      console.log("[Cockpit.js] cleanup work in use effect");
+    };
+  }, []); //if put props.persons in [] then it only occurs if persons change
   //if [] is empty then only runs when page loads
   //put dependency in []
 
   //useEffect use it as many times needed
+
+  //useEffect can also be to cleanup
+  useEffect(() => {
+    //this runs 2nd
+    console.log("[Cockpit.js] 2nd useEffect");
+    return () => {
+      //this runs first
+      //run every cycle or change as no dependecy 'that []' was passed
+      console.log("[Cockpit.js] cleanup work in 2nd use effect");
+    };
+  });
 
   const style = {
     backgroundColor: "green",

@@ -10,10 +10,8 @@
   color: rgb(0, 0, 0);
   font-size: 20px;
   font-family: "Lucida Handwriting", "Lucida", "Cursive";
-}
 
-.Person-animation {
-  animation: slideDown 0.2s ease;
+  animation: slideInRight 0.2s ease;
 }
 
 .textInput {
@@ -39,7 +37,7 @@
   font-weight: 800;
 }
 
-@keyframes slideDown {
+@keyframes slideInRight {
   0% {
     transform: translateX(-800px);
   }

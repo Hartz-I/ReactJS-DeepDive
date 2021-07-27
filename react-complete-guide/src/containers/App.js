@@ -41,6 +41,7 @@ class App extends Component {
       { id: "789", name: "Stephnie", age: 26 },
     ],
     showPersons: false,
+    showCockpit: true,
   };
 
   //lch: creation
@@ -117,6 +118,13 @@ class App extends Component {
     });
   };
 
+  toggleCockpitHandler = () => {
+    const doesShow = this.state.showCockpit;
+    this.setState({
+      showCockpit: !doesShow,
+    });
+  };
+
   //lch: creation
   render() {
     console.log("[App.js] render");
@@ -135,15 +143,24 @@ class App extends Component {
       );
     }
 
+    let cockpit = null;
+
+    if (this.state.showCockpit) {
+      cockpit = (
+        <Cockpit
+          title={this.props.appTitle}
+          persons={this.state.persons}
+          showPersons={this.state.showPersons}
+          toggle={this.togglePersonsHandler}
+        />
+      );
+    }
+
     return (
       <StyleRoot>
         <div className="App">
-          <Cockpit
-            title={this.props.appTitle}
-            persons={this.state.persons}
-            showPersons={this.state.showPersons}
-            toggle={this.togglePersonsHandler}
-          />
+          <button onClick={this.toggleCockpitHandler}>Remove Cockpit</button>
+          {cockpit}
           {persons}
         </div>
       </StyleRoot>
