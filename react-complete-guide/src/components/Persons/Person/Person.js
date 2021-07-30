@@ -13,11 +13,11 @@ import Radium from "radium";
 //proptypes
 import PropTypes from "prop-types";
 
-const style = {
-  "@media(min-width: 600px)": {
-    width: "500px",
-  }, //but to use media we need to wrap app.js with StyleRoot
-};
+// const style = {
+//   "@media(min-width: 600px)": {
+//     width: "500px",
+//   }, //but to use media we need to wrap app.js with StyleRoot
+// };
 
 //remove function and add class named same with compnent extention
 //add everything within render() {} method
@@ -27,6 +27,21 @@ const style = {
 const styleClass = ["Person"];
 
 class Person extends Component {
+  constructor(props) {
+    super(props);
+    this.inputElementRef = React.createRef();
+  }
+  componentDidMount() {
+    //focus on first input element it finds
+    //document.querySelector("input").focus();
+
+    //focus on last el
+    //this.inputElement.focus();
+
+    //focus using constructor ref
+    this.inputElementRef.current.focus();
+  }
+
   render() {
     console.log("[Person.js] person rendering..");
 
@@ -44,6 +59,12 @@ class Person extends Component {
         <p>{this.props.children}</p>
         <input
           type="text"
+          // ref={(inputEl) => {
+          //   this.inputElement = inputEl;
+          //   /**this is used to ref any part of jsx */
+          // }}
+
+          ref={this.inputElementRef}
           className="textInput"
           onChange={this.props.changed}
           value={this.props.name}
@@ -60,4 +81,4 @@ Person.propTypes = {
   changed: PropTypes.func,
 }; //now if input is changed a error will occur in console
 
-export default withClass(Radium(Person), styleClass.join(" "), style);
+export default withClass(Radium(Person), styleClass.join(" "));
