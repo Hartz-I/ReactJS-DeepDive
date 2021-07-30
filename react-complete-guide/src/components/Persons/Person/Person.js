@@ -3,6 +3,9 @@
 import React, { Component } from "react";
 import "./Person.css";
 
+//for higher order components hoc
+import Aux from "../../../hoc/Auxiliary";
+
 //for style
 import Radium from "radium";
 
@@ -23,20 +26,27 @@ class Person extends Component {
   render() {
     console.log("[Person.js] person rendering..");
 
+    //to use this without wrapping div. delete div, wrap them in 3rd brackets and put comma after every markup
+
+    //or use higher order component Aux. it's not like wrapping div. now it is using multiple React.createElement calls
     return (
-      <div className={styleClass.join(" ")} style={style}>
-        <p onClick={this.props.click}>
-          I'm <span className="changedText">{this.props.name}</span> and I am{" "}
-          {this.props.age} years old
-        </p>
-        <p>{this.props.children}</p>
-        <input
-          type="text"
-          className="textInput"
-          onChange={this.props.changed}
-          value={this.props.name}
-        />
-      </div>
+      <Aux>
+        <div className={styleClass.join(" ")} style={style}>
+          <p onClick={this.props.click}>
+            I'm <span className="changedText">{this.props.name}</span> and I am{" "}
+            {this.props.age} years old
+          </p>
+          <p>{this.props.children}</p>
+          <input
+            type="text"
+            className="textInput"
+            onChange={this.props.changed}
+            value={this.props.name}
+          />
+        </div>
+
+        <div>I'm here cuz I used aux. a second div</div>
+      </Aux>
     );
   }
 }
