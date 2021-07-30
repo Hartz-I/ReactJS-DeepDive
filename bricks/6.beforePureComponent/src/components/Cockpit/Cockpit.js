@@ -39,7 +39,7 @@ const cockpit = (props) => {
       //run every cycle or change as no dependecy 'that []' was passed
       console.log("[Cockpit.js] cleanup work in 2nd use effect");
     };
-  }, []); //even executes when hovers on button
+  });
 
   const style = {
     backgroundColor: "green",
