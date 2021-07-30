@@ -71,11 +71,13 @@ const cockpit = (props) => {
   const classes = ["para"];
 
   //putting the classes in array if conditions met
-  if (props.persons.length <= 2) {
+  if (props.personsLength <= 2) {
+    //perosns.length isn't picked up by react. so it re renders all
+    //so we directly pass the length instead of measuring it here
     classes.unshift("red");
   }
 
-  if (props.persons.length <= 1) {
+  if (props.personsLength <= 1) {
     classes.push("bold");
   }
 
@@ -93,4 +95,7 @@ const cockpit = (props) => {
   //connect the methods and variables
 };
 
-export default Radium(cockpit);
+//memo uses memorization: store snapshot of this component
+//only re renders if input changes
+//wrapping this will save time
+export default React.memo(Radium(cockpit));
