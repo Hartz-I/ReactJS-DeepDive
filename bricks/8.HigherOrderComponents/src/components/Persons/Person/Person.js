@@ -5,13 +5,9 @@ import "./Person.css";
 
 //for higher order components hoc
 import Aux from "../../../hoc/Auxiliary";
-import withClass from "../../../hoc/withClass2";
 
 //for style
 import Radium from "radium";
-
-//proptypes
-import PropTypes from "prop-types";
 
 const style = {
   "@media(min-width: 600px)": {
@@ -37,27 +33,24 @@ class Person extends Component {
     //or use React.Fragment : exactly the same as Aux
     return (
       <Aux>
-        <p onClick={this.props.click}>
-          I'm <span className="changedText">{this.props.name}</span> and I am{" "}
-          {this.props.age} years old
-        </p>
-        <p>{this.props.children}</p>
-        <input
-          type="text"
-          className="textInput"
-          onChange={this.props.changed}
-          value={this.props.name}
-        />
+        <div className={styleClass.join(" ")} style={style}>
+          <p onClick={this.props.click}>
+            I'm <span className="changedText">{this.props.name}</span> and I am{" "}
+            {this.props.age} years old
+          </p>
+          <p>{this.props.children}</p>
+          <input
+            type="text"
+            className="textInput"
+            onChange={this.props.changed}
+            value={this.props.name}
+          />
+        </div>
+
+        <div>I'm here cuz I used aux. a second div</div>
       </Aux>
     );
   }
 }
 
-Person.propTypes = {
-  click: PropTypes.func,
-  name: PropTypes.string,
-  age: PropTypes.number,
-  changed: PropTypes.func,
-}; //now if input is changed a error will occur in console
-
-export default withClass(Radium(Person), styleClass.join(" "), style);
+export default Radium(Person);

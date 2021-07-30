@@ -7,9 +7,6 @@ import Cockpit from "../components/Cockpit/Cockpit";
 
 import Radium, { StyleRoot } from "radium"; //need styleroot of media and keyframes. wrap main div
 
-//setting state correctly here on app.js
-//setting PropTypes on Person.js
-
 //importing hoc: as a component
 import WithClass from "../hoc/WithClass";
 
@@ -55,7 +52,6 @@ class App extends Component {
     ],
     showPersons: false,
     showCockpit: true,
-    changeCounter: 0,
   };
 
   //lch: creation
@@ -113,13 +109,8 @@ class App extends Component {
 
     persons[personIndex] = person;
 
-    //when depending on the previous state we should use the functional form
-    this.setState((prevState, props) => {
-      return {
-        persons: persons,
-        changeCounter: prevState.changeCounter + 1,
-        //this is a better way if dependent on previous state
-      };
+    this.setState({
+      persons: persons,
     });
   };
 
