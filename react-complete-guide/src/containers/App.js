@@ -7,6 +7,9 @@ import Cockpit from "../components/Cockpit/Cockpit";
 
 import Radium, { StyleRoot } from "radium"; //need styleroot of media and keyframes. wrap main div
 
+//importing hoc
+import WithClass from "../hoc/WithClass";
+
 //deep dive!!!
 //let us reArrage the parts
 
@@ -39,6 +42,7 @@ class App extends Component {
       { id: "123", name: "Max", age: 28 },
       { id: "456", name: "Manu", age: 29 },
       { id: "789", name: "Stephnie", age: 26 },
+      { id: "785", name: "Inan", age: 21 },
     ],
     showPersons: false,
     showCockpit: true,
@@ -157,12 +161,13 @@ class App extends Component {
     }
 
     return (
+      //withclass higer order component instead of div passes the property classes as class
       <StyleRoot>
-        <div className="App">
+        <WithClass classes="App">
           <button onClick={this.toggleCockpitHandler}>Remove Cockpit</button>
           {cockpit}
           {persons}
-        </div>
+        </WithClass>
       </StyleRoot>
     );
     //connect the state and methods with component

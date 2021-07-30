@@ -29,6 +29,8 @@ class Person extends Component {
     //to use this without wrapping div. delete div, wrap them in 3rd brackets and put comma after every markup
 
     //or use higher order component Aux. it's not like wrapping div. now it is using multiple React.createElement calls
+
+    //or use React.Fragment : exactly the same as Aux
     return (
       <Aux>
         <div className={styleClass.join(" ")} style={style}>
